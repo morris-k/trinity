@@ -1,0 +1,9 @@
+<div class="event-short">
+	<h4><%= event.title %> - <small> <%= date_format(event) %></small></h4>
+	<%= "is ad: #{is_admin(current_user)}" %>
+	<% if is_admin(current_user) %>
+		<ul>
+			<li><%= link_to "Edit", edit_event_path(event)%></li>
+		</ul>
+	<% end %>
+</div>

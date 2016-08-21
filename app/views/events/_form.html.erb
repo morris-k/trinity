@@ -1,0 +1,6 @@
+<%= simple_form_for @event do |f| %>
+	<%= f.input :title %>
+	<%= f.input :date, as: :date, :order => [:day, :month, :year] %>
+
+	<%= f.submit @event.new_record? ? "Create" : "Save Changes" %>
+<% end %>

@@ -1,10 +1,14 @@
-class EventController < ApplicationController
+class EventsController < ApplicationController
   def new
     @event = Event.new
   end
 
   def create
     Event.create(params[:event])
+  end
+
+  def edit
+  	@event = Event.find(params[:id]);
   end
 
   def update
@@ -27,12 +31,11 @@ class EventController < ApplicationController
       render @event 
     end
   end
-end
 
 
-private
+	private
 
-  def event_params
-    params.require(:event).allow(:title, :date, :start_time, :end_time, :location, :description)
-  end
+	  def event_params
+	    params.require(:event).allow(:title, :date, :start_time, :end_time, :location, :description)
+	  end
 end
