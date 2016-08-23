@@ -19,7 +19,7 @@ def create_users
 end
 
 def create_events
-	Event.create!(:title => "Bible Study", :date => Date.parse("21-8-2016"), :start_time => Time.parse('17:00'),
+	Event.create!(:title => "Bible Study", :date => Date.parse("28-8-2016"), :start_time => Time.parse('17:00'),
 		:location => "Trinity Baptist Church")
 end
 

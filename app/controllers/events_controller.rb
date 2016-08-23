@@ -12,6 +12,13 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id]);
+    if @event.update_attributes(event_params)
+      @event.save
+      render 'show'
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -28,7 +35,8 @@ class EventsController < ApplicationController
       flash[:success] = "Event deleted."
       redirect_to index
     else 
-      render @event 
+      flash[:error] = "Unable to delete event."
+      redirect_to 'index'
     end
   end
 
@@ -36,6 +44,6 @@ class EventsController < ApplicationController
 	private
 
 	  def event_params
-	    params.require(:event).allow(:title, :date, :start_time, :end_time, :location, :description)
+	    params.require(:event).permit(:title, :date, :start_time, :end_time, :location, :description)
 	  end
 end
