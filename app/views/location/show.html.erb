@@ -1,1 +1,6 @@
-Map here
+<!-- <img src="http://maps.google.com/maps/api/staticmap?center=<%=@address%>&zoom=15&size=512x512&maptype=roadmap&sensor=false&markers=color:blue%7Clabel:<%=@latlon%>&key=AIzaSyA04Evk0v9CxYCCYxYMpRYxl4vSem4fhkg"></img> -->
+<div id="map" style="width:600px;height:600px"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&callback=initMap"
+    async defer></script>

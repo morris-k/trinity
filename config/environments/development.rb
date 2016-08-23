@@ -1,4 +1,6 @@
 Rails.application.configure do
+
+  API_MAPS = 'AIzaSyA3z1ThoK-JdzkawT563QrxNh7puztgt4Y'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
