@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'calendar/full' => 'calendar#show', as: :full_calendar
   get 'calendar' => 'calendar#index', as: :calendar
-  get 'announcements/index' => 'announcements'
+  get 'announcements' => 'announcements#index', as: :announcements
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

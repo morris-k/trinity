@@ -1,5 +1,10 @@
-<%= image_tag('church/exterior1-no-lev.png') %>
-
-<% @quotes.each do |q| %>
-	<%= render 'partials/verse', { verse: q } %>
-<% end %>
+<div class="col-md-6">
+	<%= render 'partials/verse', { verse: @quotes[0] } %>
+	<div>
+		<p>Trinity Baptist Church is a caring and welcoming church. We are a church that is growing and seeing God do great things in Orange, Texas. We would love to have you as our guest and make you feel at home. Please visit our <%= link_to "Calendar", calendar_path %> and  <%= link_to "Announcements", announcements_path %> pages for dates and times.  You can also email us at staff@trinityorange.com, or call us at 409-886-1333.</p>
+	</div>
+	<%= render 'partials/verse', { verse: @quotes[1] } %>
+</div>
+<div class="col-md-4">
+	<%= image_tag('church/exterior1-no-lev.png') %>
+</div>
