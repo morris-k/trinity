@@ -8,8 +8,29 @@
 
 
 def create_data
+	qarr = [
+		{
+			content: 'Then Jesus came to them and said, “All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.”',
+			citation: "Matthew 28:18-20",
+			section: "vision"
+		},
+		{ 
+			content: "O come, let us worship and bow down: let us kneel           
+      		before the Lord our maker.",
+      	 	citation: "Psalms 95:6 ",
+      	 	section: "home"
+      	 },
+      	{
+      		content: "O worship the Lord in the beauty of holiness: fear
+      before him, all the earth.",   
+      		citation: "Psalms 96:9",
+      		section: "home"    
+      	 }
+	]
+
 	create_users
 	create_events
+	create_quotes(qarr)
 end
 
 def create_users
@@ -23,8 +44,17 @@ def create_events
 		:location => "Trinity Baptist Church")
 end
 
+def create_quotes(qarr)
+	qarr.each do |q|
+		Bquote.create!(q)
+	end
+	
+end
+
 User.delete_all
 User.reset_pk_sequence
 Event.delete_all
 Event.reset_pk_sequence
+Bquote.delete_all
+Bquote.reset_pk_sequence
 create_data

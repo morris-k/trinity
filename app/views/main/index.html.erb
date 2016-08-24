@@ -1,1 +1,5 @@
 <%= image_tag('church/exterior1-no-lev.png') %>
+
+<% @quotes.each do |q| %>
+	<%= render 'partials/verse', { verse: q } %>
+<% end %>
