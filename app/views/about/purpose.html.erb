@@ -1,36 +1,46 @@
 <%= title "Our Purpose" %>
-<div>
-	<div class="col-md-6">
+<div class="row">
+	<div class="col-md-8">
 		<div class="panel">
-	 		<div class="panel-heading">
-				<h3>Our Purpose</h3>	
+	 		<div class="panel-heading panel-heading-large">
+				<p>Our Purpose</p>	
+			</div>
+	  		<ul class="panel-body list-group">
+				<li class="list-group-item no-border">To worship God</li> 
+				<li class="list-group-item no-border">To bring people to faith in Jesus Christ</li> 
+				<li class="list-group-item no-border">To fellowship with believers</li> 
+				<li class="list-group-item no-border">To lead people to spiritual maturity</li>
+				<li class="list-group-item no-border">To equip believers for ministry and service</li>
+			</ul>
+		</div>
+		<div class="panel">
+	 		<div class="panel-heading panel-heading-large">
+				<p>Our Vision</p>	
 			</div>
 	  		<div class="panel-body">
-				<li>to worship God</li> 
-				<li>to bring people to faith in Jesus Christ</li> 
-				<li>to fellowship with believers</li> 
-				<li>to lead people to spiritual maturity</li>
-				<li>to equip believers for ministry and service</li>
+				<p>To be a "Great Commission" church, which exalts Jesus Christ as we seek to be fully obedient to Him.</p>
+			</div>
+			<div class="panel-footer">
+				<%= render 'partials/verse', { verse: @vision } %>
 			</div>
 		</div>
 		<div class="panel">
-		 		<div class="panel-heading">
-					<h3>Our Vision</h3>	
-				</div>
-		  		<div class="panel-body">
-					<p>To be a "Great Commission" church, which exalts Jesus Christ as we seek to be fully obedient to Him.</p>
-					<%= render 'partials/verse', { verse: @vision } %>
-				</div>
+	 		<div class="panel-heading panel-heading-large">
+				<p>In simple terms</p>	
+			</div>
+	  		<div class="panel-body">
+				<p>We come together as Christians to worship our Lord Jesus Christ in prayer and song.</p>
+			</div>
+			<div class="panel-footer">
+				<%= render 'partials/verse', { verse: @simple } %>
 			</div>
 		</div>
 	</div>
-	<div class="col-md-6">
-		 <h3>In simple terms:</h3>
-		 <p>We come together as Christians to worship our Lord Jesus Christ in prayer and song.</p>
- 
-        <p>"So we, being many, are one body in Christ, and every one members one of another."      Roman 12:5</p>
-	</div>
-	<div>
-		 
+	<div class="col-md-4">
+		<div class="panel panel-default">
+        	<div class="panel-heading">
+	        	<p>Trinity Baptist Church is a member of the Southern Baptist Convention.  The foundation of our beliefs and values can be found at the links below.</p>
+	        </div>
+	    </div>
 	</div>
 </div>

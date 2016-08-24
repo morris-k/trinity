@@ -25,6 +25,11 @@ def create_data
       before him, all the earth.",   
       		citation: "Psalms 96:9",
       		section: "home"    
+      	 }, 
+      	 {
+      	 	content: '"So we, being many, are one body in Christ, and every one members one of another."',
+      	 	citation: "Romans 12:5",
+      	 	section: "simple_terms"
       	 }
 	]
 
