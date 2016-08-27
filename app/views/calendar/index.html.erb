@@ -1,3 +1,11 @@
-<% @events.each do |event| %>
-	 <%= render 'events/short', { event: event} %>
+<%= month_calendar(attribute: :date, events: @events) do |date, events| %>
+	<div class='calendar-box'>
+		<strong><%= date.strftime("%e") %></strong>
+	  <% events.each do |event| %>
+	    <div>
+	      <%= link_to event.title, event_path(event) %>
+	      <%= ampm_time(event.start_time) %>
+	    </div>	
+	</div>
+  <% end %>
 <% end %>

@@ -1,1 +1,9 @@
-Calendar 
+<div class="event-long">
+	<h4><%= event.title %> - <small> <%= date_format(event) %></small></h4>
+	<p><%= event.description %></p>
+	<% if current_user && current_user.admin? %>
+		<ul>
+			<li><%= link_to "Edit", edit_event_path(event)%></li>
+		</ul>
+	<% end %>
+</div>
