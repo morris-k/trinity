@@ -4,7 +4,7 @@
 	  <% events.each do |event| %>
 	    <div>
 	      <%= link_to event.title, event_path(event) %>
-	      <%= ampm_time(event.start_time) %>
+	      <p><%= ampm_time(event.start_time) %></p>
 	    </div>	
 	</div>
   <% end %>

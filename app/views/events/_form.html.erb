@@ -2,5 +2,12 @@
 	<%= f.input :title %>
 	<%= f.input :date, as: :date, :order => [:day, :month, :year] %>
 
-	<%= f.submit @event.new_record? ? "Create" : "Save Changes" %>
-<% end %>
+	<%= f.input :start_time, as: :time, wrapper_html: { id: "timepicker"} %>
+
+	<div class="form-group">
+		<%= f.select_recurring :recurring_rules %>
+	</div>
+
+	<%= f.submit @event.new_record? ? "Create" : "Save Changes", :class => "btn btn-primary" %>
+	<%= link_to "Cancel", events_path %>
+<% end %> 

@@ -4,7 +4,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(params[:event])
+    @event = Event.new(event_params)
+    if @event.save
+      flash[:success] = "Event created!"
+      redirect_to @event
+    else
+      flash[:error] = "#{@event.errors.full_messages}"
+      render 'new'
+    end
   end
 
   def edit
@@ -29,14 +36,17 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def delete
-    @event = Event.find(params[:id])
-    if (@event.destroy)
-      flash[:success] = "Event deleted."
-      redirect_to index
-    else 
-      flash[:error] = "Unable to delete event."
-      redirect_to 'index'
+  def destroy
+    dest = Event.find(params[:id]).destroy;
+    puts "#{dest}"
+    respond_to do |format|
+      if dest
+        format.html { redirect_to events_path, :notice => 'deleted' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to events_path, :notice => "not deleted"}
+        format.json { head :no_content }
+      end
     end
   end
 

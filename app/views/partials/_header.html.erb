@@ -1,6 +1,11 @@
 <div class="header">
 	<div class="container-fluid">
 		<%= link_to image_tag('logo/logo-color.png', height: '100'), root_path %>
+		<% if admin_signed_in?(current_user) %>
+			<div class="admin-bar">
+				<%= link_to "Create Event", new_event_path %>
+			</div>
+		<% end %>
 	</div>
 </div>
 <div class="navbar navbar-default">
@@ -21,5 +26,7 @@
 		</ul>
 	</div>
 </div>
+<span class="notice"><%= notice %></span>
+<span class="error"><%= flash[:error] %></span>
 
 

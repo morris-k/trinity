@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'main#index'
 
   resources :events
+  
   get 'about-us/our-purpose' => 'about#purpose', as: :purpose
   get 'about-us/our-pastor' => 'about#pastor', as: :pastor
 

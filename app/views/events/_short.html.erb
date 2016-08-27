@@ -3,6 +3,7 @@
 	<% if current_user && current_user.admin? %>
 		<ul>
 			<li><%= link_to "Edit", edit_event_path(event)%></li>
+			<li><%= button_to "Delete", event_path(event.id), method: :delete %></li>
 		</ul>
 	<% end %>
 </div>
