@@ -8,7 +8,7 @@ function initMap() {
 
 	var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";
 	var link = "https://goo.gl/maps/iiYJdqraM9v";
-	var win = "window.open('" + link + "', '_blank', 'width=800,height=520,left:200')";
+	var win = "window.open('" + link + "', '_blank', 'width=800,height=520,left=200')";
 	var dirlink = '<a onclick="' + win + '">Get Directions</a>';
 
 	var map = new google.maps.Map(document.getElementById('map'), mapOpts);

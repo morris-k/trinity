@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'about-us/our-purpose' => 'about#purpose', as: :purpose
   get 'about-us/our-pastor' => 'about#pastor', as: :pastor
 
-  get 'location/show', as: :directions
+  get 'location' => 'location#show', as: :directions
 
   get 'calendar/full' => 'calendar#show', as: :full_calendar
   get 'calendar' => 'calendar#index', as: :calendar
