@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   	return is_admin
   end
 
+
   protected
 	  def is_admin
 	  	return admin

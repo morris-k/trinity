@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def admin_signed_in?(user)
-		if (!user.nil? & user.admin) 
+		if (!user.nil? && user.admin?) 
 			true
 		else
 			false

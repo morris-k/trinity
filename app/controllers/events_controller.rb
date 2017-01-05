@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       flash[:success] = "Event created!"
-      redirect_to @event
+      redirect_to calendar_path
     else
       flash[:error] = "#{@event.errors.full_messages}"
       render 'new'
@@ -38,7 +38,6 @@ class EventsController < ApplicationController
 
   def destroy
     dest = Event.find(params[:id]).destroy;
-    puts "#{dest}"
     respond_to do |format|
       if dest
         format.html { redirect_to events_path, :notice => 'deleted' }
@@ -54,6 +53,6 @@ class EventsController < ApplicationController
 	private
 
 	  def event_params
-	    params.require(:event).permit(:title, :date, :start_time, :end_time, :location, :description)
+	    params.require(:event).permit(:title, :date, :start_time, :end_time, :location, :description, {:recurring_rules => []})
 	  end
 end

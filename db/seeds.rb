@@ -40,8 +40,8 @@ end
 
 def create_users
 	puts "CREATING USERS"
-	User.create!(:email => "test@example.com", :password => 'example12')
-	User.create!(:email => "admin@example.com", :password => 'example12', :admin => true)
+	User.create!(:email => "test@example.com", :password => 'password')
+	User.create!(:email => "admin@example.com", :password => 'password', :admin => true)
 end
 
 def create_events

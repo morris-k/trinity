@@ -1,5 +1,6 @@
 <%= simple_form_for @event do |f| %>
 	<%= f.input :title %>
+	<%= f.input :location %>
 	<%= f.input :date, as: :date, :order => [:day, :month, :year] %>
 
 	<%= f.input :start_time, as: :time, wrapper_html: { id: "timepicker"} %>
