@@ -1,5 +1,5 @@
 <div class="event-short">
-	<h4><%= event.title %> - <small> <%= date_format(event) %></small></h4>
+	<h4><%= event.title %> - <small> <%= date_format(event.start_time) %></small></h4>
 	<% if current_user && current_user.admin? %>
 		<ul>
 			<li><%= link_to "Edit", edit_event_path(event)%></li>

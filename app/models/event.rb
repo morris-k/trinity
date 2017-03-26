@@ -1,8 +1,7 @@
 class Event < ActiveRecord::Base
 
 	validates_presence_of :title, :message => "Events must have a title."
-	validates_presence_of :date, :message => "Events must have a date"
-	validates_presence_of :start_time, :message => "Start time must be filled out"
+	# validates_presence_of :start_time, :message => "Events must have a start time."
 
 	attr_accessor :recurring_rules
 

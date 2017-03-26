@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824000649) do
+ActiveRecord::Schema.define(version: 20170325224517) do
 
   create_table "bquotes", force: :cascade do |t|
     t.text     "content"
@@ -25,9 +25,8 @@ ActiveRecord::Schema.define(version: 20160824000649) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",                       null: false
-    t.date     "date",                        null: false
-    t.time     "start_time",                  null: false
-    t.time     "end_time"
+    t.datetime "start_time",                  null: false
+    t.datetime "end_time"
     t.text     "location",                    null: false
     t.text     "description"
     t.datetime "created_at",                  null: false

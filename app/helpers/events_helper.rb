@@ -1,6 +1,8 @@
 module EventsHelper
 
-	def date_format(event)
-		event.date.strftime("%B %-d, %Y")
+	def date_format(time)
+		time.strftime("%B %-d, %Y")
 	end
+
+
 end

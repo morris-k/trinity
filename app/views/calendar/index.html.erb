@@ -1,4 +1,4 @@
-<%= month_calendar(attribute: :date, events: @events) do |date, events| %>
+<%= month_calendar(attribute: :start_time, events: @events) do |date, events| %>
 	<div class='calendar-box'>
 		<strong><%= date.strftime("%e") %></strong>
 	  <% events.each do |event| %>
