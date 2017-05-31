@@ -4,8 +4,9 @@
 	</div>
 	<div class="main-content">
 		<p class="main-info">Trinity Baptist Church is a caring and welcoming church. We are a church that is growing and seeing God do great things in Orange, Texas. We would love to have you as our guest and make you feel at home. Please visit our <%= link_to "Calendar", calendar_path %> and  <%= link_to "Announcements", announcements_path %> pages for dates and times.</p>
-
+		</br>
 		<p><strong>Email Us: </strong><%= mail_to "staff@trinityorange.com", "staff@trinityorange.com" %></p>
+		<p><strong>Call Us: 409-886-1333 </strong></p>
 	</div>
 	<div class="main-quote" id="main-quote-2">
 		<%= render 'partials/verse', { verse: @quotes[1] } %>

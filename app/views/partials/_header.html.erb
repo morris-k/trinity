@@ -1,11 +1,6 @@
 <div class="header">
 	<div class="container-fluid">
 		<%= link_to image_tag('logo/logo-color.png', height: '100'), root_path %>
-		<% if admin_signed_in?(current_user) %>
-			<div class="admin-bar">
-				<%= link_to "Create Event", new_event_path %>
-			</div>
-		<% end %>
 	</div>
 </div>
 <div class="navbar navbar-default">
@@ -23,6 +18,13 @@
   			<li><%= link_to "How to Find Us", directions_path %></li>
   			<li><%= link_to "Calendar", calendar_path %></li>
   			<li><%= link_to "Announcements", announcements_path %></li>
+		</ul>
+		<ul id="nav_admin" class="nav navbar-nav navbar-right">
+			<% if admin_signed_in?(current_user) %>
+			<li>
+				<%= link_to "Create Event", new_event_path %>
+			</li>
+		<% end %>
 		</ul>
 	</div>
 </div>
