@@ -89,6 +89,7 @@ def create_quotes(qarr)
 	end
 end
 
+case Rails.env
 User.delete_all
 User.reset_pk_sequence
 Event.delete_all

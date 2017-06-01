@@ -16,7 +16,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'activerecord-reset-pk-sequence'
 end
 
 group :production do
@@ -48,6 +47,7 @@ gem 'recurring_select'
 gem "simple_calendar", "~> 2.0"
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'activerecord-reset-pk-sequence'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
