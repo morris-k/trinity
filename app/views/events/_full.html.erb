@@ -1,0 +1,11 @@
+<div class="event-full">
+	<h3><%= event.title %></h3>
+	<h4><%= [date_format(event.start_time), time_format(event.start_time)].join(", ") %></h3>
+	<p><%= event.description %></p>
+	<% if current_user && current_user.admin? %>
+		<ul class="form_controls">
+			<li class="button"><%= link_to "Edit", edit_event_path(event) %></li>
+			<li class="button"><%= link_to "Delete", event_path(event.id), method: :delete  %></li>
+		</ul>
+	<% end %>
+</div>

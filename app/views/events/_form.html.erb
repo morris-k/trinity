@@ -15,8 +15,13 @@
 	</div>
 
 	<div class="form-group">
-		<%= f.label :end_time, "End Time" %>
+		<%= f.label :end_time, "End Time (optional)" %>
 		<%= f.datetime_select :end_time, :order => [:month, :day, :year, :hour, :minute] %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :description, "Description (optional)" %>
+		<%= f.text_area :description %>
 	</div>
 
 	<%= f.submit "Create Event" %>

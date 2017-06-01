@@ -45,15 +45,48 @@ def create_users
 end
 
 def create_events
-	Event.create!(:title => "Bible Study", :date => Date.parse("28-8-2016"), :start_time => Time.parse('17:00'),
-		:location => "Trinity Baptist Church")
+	puts "CREATING EVENTS"
+	n = 20
+	from = Date.today
+	dys = ["Sunday", "Tuesday", "Wednesday", "Friday"]
+	starts = []
+	while starts.length < n
+		start = from + [*-30..30].sample.days
+		if !dys.include?(start.strftime("%A"))
+			next
+		end
+		if start.strftime("%A") == "Sunday" || start.strftime("%A") == "Wednesday"
+			start += [7, 10, 17].sample.hours
+		else
+			start += 17.hours
+		end
+		starts <<  start
+		starts = starts.uniq
+	end
+	starts.each do |start|
+		if start.strftime("%A") == "Sunday" || start.strftime("%A") == "Wednesday"
+			et = start + 2.hours
+			Event.create!(:title => "#{start.strftime("%A")} Service", 
+						:location => "Trinity Baptist Church",
+						:start_time => start,
+						:end_time => et,
+						:description => "We hope to see you there!")
+		else
+			et = start + 1.hours
+			Event.create!(:title => "#{start.strftime("%A")} Bible Study", 
+						:location => "Trinity Baptist Church, Room #1",
+						:start_time => start,
+						:end_time => et,
+						:description => "Join us for discussion!")
+		end
+	end
 end
 
 def create_quotes(qarr)
+	puts "CREATING QUOTES"
 	qarr.each do |q|
 		Bquote.create!(q)
 	end
-	
 end
 
 User.delete_all
