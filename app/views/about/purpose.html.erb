@@ -20,9 +20,11 @@
 	  		<div class="panel-body">
 				<p>To be a "Great Commission" church, which exalts Jesus Christ as we seek to be fully obedient to Him.</p>
 			</div>
-			<div class="panel-footer">
-				<%= render 'partials/verse', { verse: @vision } %>
-			</div>
+			<% if !@version.nil? %>
+				<div class="panel-footer">
+					<%= render 'partials/verse', { verse: @vision } %>
+				</div>
+			<% end %>
 		</div>
 		<div class="panel">
 	 		<div class="panel-heading panel-heading-large">
