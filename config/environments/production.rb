@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  API_MAPS = 'AIzaSyA3z1ThoK-JdzkawT563QrxNh7puztgt4Y'
   # Code is not reloaded between requests.
   config.cache_classes = true
 
