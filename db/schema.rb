@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325224517) do
+ActiveRecord::Schema.define(version: 20160824000649) do
 
   create_table "bquotes", force: :cascade do |t|
     t.text     "content"
